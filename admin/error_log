@@ -1,0 +1,2 @@
+[09-Jul-2020 05:54:06 UTC] PHP Fatal error:  Cannot redeclare getvideo() (previously declared in /home2/etronics/public_html/scg_mv/admin/comments_list.php:6) in /home2/etronics/public_html/scg_mv/inc/functions.php on line 1391
+[09-Jul-2020 05:54:53 UTC] PHP Fatal error:  Cannot redeclare getvideo() (previously declared in /home2/etronics/public_html/scg_mv/admin/comments_list.php:6) in /home2/etronics/public_html/scg_mv/inc/functions.php on line 1391

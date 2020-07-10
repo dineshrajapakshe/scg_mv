@@ -1,0 +1,56 @@
+[07-Jul-2020 02:54:05 UTC] PHP Warning:  include_once(./top_header.php): failed to open stream: No such file or directory in /home/jhasia45/public_html/scg_mv/admin/index.php on line 2
+[07-Jul-2020 02:54:05 UTC] PHP Warning:  include_once(): Failed opening './top_header.php' for inclusion (include_path='.:/opt/alt/php72/usr/share/pear') in /home/jhasia45/public_html/scg_mv/admin/index.php on line 2
+[07-Jul-2020 02:54:05 UTC] PHP Warning:  include_once(./navbar.php): failed to open stream: No such file or directory in /home/jhasia45/public_html/scg_mv/admin/index.php on line 18
+[07-Jul-2020 02:54:05 UTC] PHP Warning:  include_once(): Failed opening './navbar.php' for inclusion (include_path='.:/opt/alt/php72/usr/share/pear') in /home/jhasia45/public_html/scg_mv/admin/index.php on line 18
+[07-Jul-2020 02:54:05 UTC] PHP Warning:  include_once(./sidebar.php): failed to open stream: No such file or directory in /home/jhasia45/public_html/scg_mv/admin/index.php on line 22
+[07-Jul-2020 02:54:05 UTC] PHP Warning:  include_once(): Failed opening './sidebar.php' for inclusion (include_path='.:/opt/alt/php72/usr/share/pear') in /home/jhasia45/public_html/scg_mv/admin/index.php on line 22
+[07-Jul-2020 02:54:05 UTC] PHP Warning:  include_once(./page_header.php): failed to open stream: No such file or directory in /home/jhasia45/public_html/scg_mv/admin/dashboard.php on line 10
+[07-Jul-2020 02:54:05 UTC] PHP Warning:  include_once(): Failed opening './page_header.php' for inclusion (include_path='.:/opt/alt/php72/usr/share/pear') in /home/jhasia45/public_html/scg_mv/admin/dashboard.php on line 10
+[07-Jul-2020 02:54:05 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function printAmount_by_admin_with_symbol() in /home/jhasia45/public_html/scg_mv/admin/infobox.php:9
+Stack trace:
+#0 /home/jhasia45/public_html/scg_mv/admin/dashboard.php(16): include_once()
+#1 /home/jhasia45/public_html/scg_mv/admin/index.php(23): include_once('/home/jhasia45/...')
+#2 {main}
+  thrown in /home/jhasia45/public_html/scg_mv/admin/infobox.php on line 9
+[07-Jul-2020 02:58:33 UTC] PHP Warning:  include_once(./top_header.php): failed to open stream: No such file or directory in /home/jhasia45/public_html/scg_mv/admin/index.php on line 2
+[07-Jul-2020 02:58:33 UTC] PHP Warning:  include_once(): Failed opening './top_header.php' for inclusion (include_path='.:/opt/alt/php72/usr/share/pear') in /home/jhasia45/public_html/scg_mv/admin/index.php on line 2
+[07-Jul-2020 02:58:33 UTC] PHP Warning:  include_once(./navbar.php): failed to open stream: No such file or directory in /home/jhasia45/public_html/scg_mv/admin/index.php on line 18
+[07-Jul-2020 02:58:33 UTC] PHP Warning:  include_once(): Failed opening './navbar.php' for inclusion (include_path='.:/opt/alt/php72/usr/share/pear') in /home/jhasia45/public_html/scg_mv/admin/index.php on line 18
+[07-Jul-2020 02:58:33 UTC] PHP Warning:  include_once(./sidebar.php): failed to open stream: No such file or directory in /home/jhasia45/public_html/scg_mv/admin/index.php on line 22
+[07-Jul-2020 02:58:33 UTC] PHP Warning:  include_once(): Failed opening './sidebar.php' for inclusion (include_path='.:/opt/alt/php72/usr/share/pear') in /home/jhasia45/public_html/scg_mv/admin/index.php on line 22
+[07-Jul-2020 02:58:33 UTC] PHP Warning:  include_once(./page_header.php): failed to open stream: No such file or directory in /home/jhasia45/public_html/scg_mv/admin/dashboard.php on line 10
+[07-Jul-2020 02:58:33 UTC] PHP Warning:  include_once(): Failed opening './page_header.php' for inclusion (include_path='.:/opt/alt/php72/usr/share/pear') in /home/jhasia45/public_html/scg_mv/admin/dashboard.php on line 10
+[07-Jul-2020 02:58:33 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function printAmount_by_admin_with_symbol() in /home/jhasia45/public_html/scg_mv/admin/infobox.php:9
+Stack trace:
+#0 /home/jhasia45/public_html/scg_mv/admin/dashboard.php(16): include_once()
+#1 /home/jhasia45/public_html/scg_mv/admin/index.php(23): include_once('/home/jhasia45/...')
+#2 {main}
+  thrown in /home/jhasia45/public_html/scg_mv/admin/infobox.php on line 9
+[07-Jul-2020 02:58:40 UTC] PHP Warning:  include_once(./top_header.php): failed to open stream: No such file or directory in /home/jhasia45/public_html/scg_mv/admin/index.php on line 2
+[07-Jul-2020 02:58:40 UTC] PHP Warning:  include_once(): Failed opening './top_header.php' for inclusion (include_path='.:/opt/alt/php72/usr/share/pear') in /home/jhasia45/public_html/scg_mv/admin/index.php on line 2
+[07-Jul-2020 02:58:40 UTC] PHP Warning:  include_once(./navbar.php): failed to open stream: No such file or directory in /home/jhasia45/public_html/scg_mv/admin/index.php on line 18
+[07-Jul-2020 02:58:40 UTC] PHP Warning:  include_once(): Failed opening './navbar.php' for inclusion (include_path='.:/opt/alt/php72/usr/share/pear') in /home/jhasia45/public_html/scg_mv/admin/index.php on line 18
+[07-Jul-2020 02:58:40 UTC] PHP Warning:  include_once(./sidebar.php): failed to open stream: No such file or directory in /home/jhasia45/public_html/scg_mv/admin/index.php on line 22
+[07-Jul-2020 02:58:40 UTC] PHP Warning:  include_once(): Failed opening './sidebar.php' for inclusion (include_path='.:/opt/alt/php72/usr/share/pear') in /home/jhasia45/public_html/scg_mv/admin/index.php on line 22
+[07-Jul-2020 02:58:40 UTC] PHP Warning:  include_once(./page_header.php): failed to open stream: No such file or directory in /home/jhasia45/public_html/scg_mv/admin/dashboard.php on line 10
+[07-Jul-2020 02:58:40 UTC] PHP Warning:  include_once(): Failed opening './page_header.php' for inclusion (include_path='.:/opt/alt/php72/usr/share/pear') in /home/jhasia45/public_html/scg_mv/admin/dashboard.php on line 10
+[07-Jul-2020 02:58:40 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function printAmount_by_admin_with_symbol() in /home/jhasia45/public_html/scg_mv/admin/infobox.php:9
+Stack trace:
+#0 /home/jhasia45/public_html/scg_mv/admin/dashboard.php(16): include_once()
+#1 /home/jhasia45/public_html/scg_mv/admin/index.php(23): include_once('/home/jhasia45/...')
+#2 {main}
+  thrown in /home/jhasia45/public_html/scg_mv/admin/infobox.php on line 9
+[07-Jul-2020 02:59:16 UTC] PHP Warning:  include_once(./top_header.php): failed to open stream: No such file or directory in /home/jhasia45/public_html/scg_mv/admin/index.php on line 2
+[07-Jul-2020 02:59:16 UTC] PHP Warning:  include_once(): Failed opening './top_header.php' for inclusion (include_path='.:/opt/alt/php72/usr/share/pear') in /home/jhasia45/public_html/scg_mv/admin/index.php on line 2
+[07-Jul-2020 02:59:16 UTC] PHP Warning:  include_once(./navbar.php): failed to open stream: No such file or directory in /home/jhasia45/public_html/scg_mv/admin/index.php on line 18
+[07-Jul-2020 02:59:16 UTC] PHP Warning:  include_once(): Failed opening './navbar.php' for inclusion (include_path='.:/opt/alt/php72/usr/share/pear') in /home/jhasia45/public_html/scg_mv/admin/index.php on line 18
+[07-Jul-2020 02:59:16 UTC] PHP Warning:  include_once(./sidebar.php): failed to open stream: No such file or directory in /home/jhasia45/public_html/scg_mv/admin/index.php on line 22
+[07-Jul-2020 02:59:16 UTC] PHP Warning:  include_once(): Failed opening './sidebar.php' for inclusion (include_path='.:/opt/alt/php72/usr/share/pear') in /home/jhasia45/public_html/scg_mv/admin/index.php on line 22
+[07-Jul-2020 02:59:16 UTC] PHP Warning:  include_once(./page_header.php): failed to open stream: No such file or directory in /home/jhasia45/public_html/scg_mv/admin/dashboard.php on line 10
+[07-Jul-2020 02:59:16 UTC] PHP Warning:  include_once(): Failed opening './page_header.php' for inclusion (include_path='.:/opt/alt/php72/usr/share/pear') in /home/jhasia45/public_html/scg_mv/admin/dashboard.php on line 10
+[07-Jul-2020 02:59:16 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function printAmount_by_admin_with_symbol() in /home/jhasia45/public_html/scg_mv/admin/infobox.php:9
+Stack trace:
+#0 /home/jhasia45/public_html/scg_mv/admin/dashboard.php(16): include_once()
+#1 /home/jhasia45/public_html/scg_mv/admin/index.php(23): include_once('/home/jhasia45/...')
+#2 {main}
+  thrown in /home/jhasia45/public_html/scg_mv/admin/infobox.php on line 9
