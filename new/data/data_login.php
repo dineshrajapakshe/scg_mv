@@ -5,7 +5,7 @@ include_once '../conn.php';
 include_once 'functions.php';
 
 //Fetching Values from URL
-$login_pass = $_POST['u_password'];
+$login_pass = md5($_POST['u_password']);
 $login_user = $_POST['u_username'];
 $v_id = $_POST['v_id'];
 
@@ -19,7 +19,7 @@ if ($login_pass != '' && $login_user != '') {
         $pw = $res['u_password'];
 
         if ($login_pass == $pw) {
-
+            $_SESSION['user_det'] = $res;
             $_SESSION['login'] = $res['u_id'];
             $_SESSION['user'] = $res['u_username'];
 

@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     
     <!-- PAGE TITLE -->
-    <title>  <?=$lang['System']?></title>
+    <title>  <?='SCG MV'?></title>
 
     <!-- META KEYWORDS AND DESCRIPTION -->
     <meta name="keywords" content="HTML5 Template, one page template, leanding page, themeforest template, ckavart, ckav, template, multipurpose template" />

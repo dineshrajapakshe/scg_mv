@@ -1,4 +1,8 @@
 <header class="ckav-header-area" data-ckav-smd="padding-t-0">
+
+    <?php
+    include_once './login.php';
+    ?>
     <div class="inner-wrapper">
         <div class="container-fluid padding-0">
             <div class="row align-items-center">
@@ -19,23 +23,24 @@
                             <div class="bar"></div>
                         </div>
                     </div>
-
                     <div class="navigation-wrapper align-right" data-ckav-smd="align-center">
                         <ul class="navigation-ul">
 
-                            <li class="navigation-li">
-                                <a class="navigation-a" data-toggle="modal" data-target="#popup_signUp" data-dismiss="modal" id="reg-button"><i class="fa fa-user-plus"></i></a>    
-                            </li>
-                            <li class="navigation-li">
-                                <a href="#popup_signUp" class="navigation-a" data-page-type="inner-page" data-toggle="modal" data-target="#popup_login"><i class="fa fa-user"></i></a>    
-                            </li>
-                            <li class="navigation-li">
-                                <a href="#popup_login" class="navigation-a" data-page-type="inner-page" data-toggle="modal" data-target="#popup_login"><i class="icon-login"></i></a>    
-                            </li>
-                            <?php
-                            include_once './popup_login.php';
-                            include_once './popup_register.php';
-                            ?>
+                            <?php if (!isset($_SESSION["login"])) { ?>
+                                <li class="navigation-li">
+                                    <a class="navigation-a" data-toggle="modal" data-target="#popup_signUp" data-dismiss="modal" id="reg-button"><i class="fa fa-user-plus"></i></a>    
+                                </li>
+                                <li class="navigation-li">
+                                    <a href="#popup_signUp" class="navigation-a" data-page-type="inner-page" data-toggle="modal" data-target="#popup_login"><i class="fa fa-user"></i></a>    
+                                </li>
+                            <?php } else { ?>
+                                <li class="navigation-li">
+                                    <a href="data/logout.php" class="navigation-a"><i class="icon-login"></i></a>    
+                                </li>
+                                <li class="navigation-li">
+                                    <a href="my_account.php" class="navigation-a"><i class="fa fa-user"></i></a>    
+                                </li>
+                            <?php } ?>
                         </ul>
                     </div>
 

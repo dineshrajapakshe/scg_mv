@@ -2,6 +2,12 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/xampp/htdocs/w/youtube/new/data/data_login.php</file>
+            <file>file:/C:/xampp/htdocs/w/youtube/new/my_account.php</file>
+            <file>file:/C:/xampp/htdocs/w/youtube/new/data/update_user.php</file>
+            <file>file:/C:/xampp/htdocs/w/youtube/new/data/data_signup.php</file>
+            <file>file:/C:/xampp/htdocs/w/youtube/new/admin/data/data_login.php</file>
+        </group>
     </open-files>
 </project-private>

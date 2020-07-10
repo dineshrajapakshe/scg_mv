@@ -1,30 +1,30 @@
 <!-- Main Footer -->
-<footer class="main-footer"> <strong>Copyright &copy; 2020 <a href="#">  <?=$lang['System']?></a>.</strong> All rights reserved.
-	<div class="float-right d-none d-sm-inline-block"> <b>Version</b> 3.0.2 </div>
+<footer class="main-footer"> <strong>Copyright &copy; 2020 <a href="#">  <?= $lang['System'] ?></a>.</strong> All rights reserved.
+    <div class="float-right d-none d-sm-inline-block"> <b>Version</b> 3.0.2 </div>
 </footer>
 </div>
 <script type="text/javascript">
-function logout() {
-	swal({
-		title: "Are You Sure ",
-		text: "Loging Out",
-		icon: "warning",
-		buttons: ['No Cancel It', 'I am Sure'],
-		dangerMode: true
-	}).then(function(isConfirm) {
-		if(isConfirm) {
-			swal({
-				title: 'Log Out',
-				text: 'Thank You',
-				icon: 'success'
-			}).then(function() {
-				window.location = 'data/logout.php';
-			});
-		} else {
-			swal('Cancelled', 'User Not Login Out', 'error');
-		}
-	});
-}
+    function logout() {
+        swal({
+            title: "Are You Sure ",
+            text: "Loging Out",
+            icon: "warning",
+            buttons: ['No Cancel It', 'I am Sure'],
+            dangerMode: true
+        }).then(function (isConfirm) {
+            if (isConfirm) {
+                swal({
+                    title: 'Log Out',
+                    text: 'Thank You',
+                    icon: 'success'
+                }).then(function () {
+                    window.location = 'data/logout.php';
+                });
+            } else {
+                swal('Cancelled', 'User Not Login Out', 'error');
+            }
+        });
+    }
 </script>
 <!-- ./wrapper -->
 <script src="plugins/jquery/jquery.min.js"></script>
@@ -65,27 +65,27 @@ function logout() {
 <script src="js/lib/datatables/datatables-init.js"></script>
 <!-- /.content-wrapper -->
 <script type="text/javascript">
-window.onload = function() {
-	if(document.cookie.indexOf("_instance=true") === -1) {
-		document.cookie = "_instance=true";
-		// Set the onunload function
-		window.onunload = function() {
-			document.cookie = "_instance=true;expires=Thu, 01-Jan-1970 00:00:01 GMT";
-		};
-		// Load the application
-	} else {
-		alert(" Security Alerts.You Are Opening Multiple Window. This window will now close.");
-		var win = window.location.href ='lock.php';
-		win.close();
-		// Notify the user
-	}
-};
+    window.onload = function () {
+        if (document.cookie.indexOf("_instance=true") === -1) {
+            document.cookie = "_instance=true";
+            // Set the onunload function
+            window.onunload = function () {
+                document.cookie = "_instance=true;expires=Thu, 01-Jan-1970 00:00:01 GMT";
+            };
+            // Load the application
+        } else {
+            alert(" Security Alerts.You Are Opening Multiple Window. This window will now close.");
+            var win = window.location.href = 'lock.php';
+            win.close();
+            // Notify the user
+        }
+    };
 </script>
 <script src="js/validation.js" type="text/javascript"></script>
 
 <script>
-  $(function () {
-    // Summernote
-    $('.textarea').summernote();
-  });
+    $(function () {
+        // Summernote
+        $('.textarea').summernote();
+    });
 </script>

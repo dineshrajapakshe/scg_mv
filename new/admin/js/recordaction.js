@@ -96,6 +96,10 @@ function delete_record(id, tbl, id_name, type) {
                                  break;
                             case 20:
                                 window.location.href = "admin_withdraw_request_list.php";
+                                break;
+                            case 21:
+                                window.location.href = "comments_list.php";
+                                 break;
                         }
 
                     }
@@ -208,6 +212,9 @@ function activate_record(id, tbl, id_name, type) {
                             case 20:
                                 window.location.href = "admin_withdraw_request_list.php";
 
+                            case 21:
+                                window.location.href = "comments_list.php";
+                                 break;
 
 
                         }

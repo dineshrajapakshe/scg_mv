@@ -10,7 +10,18 @@ function getAdminDetails($a_id, $conn) {
     $res = mysqli_fetch_assoc($result);
     return $res;
 }
-
+function custom_echo($x, $length)
+{
+  if(strlen($x)<=$length)
+  {
+    echo $x;
+  }
+  else
+  {
+    $y=substr($x,0,$length) . '...';
+    echo $y;
+  }
+}
 function getAdminType($at_id, $conn) {
     $sql = "SELECT * FROM admin_types where at_id='" . $at_id . "'";
     $result = mysqli_query($conn, $sql);
@@ -1313,9 +1324,6 @@ function statement_admin_commission($from, $to, $a_id, $conn) {
     return $res['play'];
 }
 
-
-
-
 function getGamecount($conn) {
     $sql = "select COUNT(g_id) as gm  from games where g_status=1";
     $result = mysqli_query($conn, $sql);
@@ -1349,7 +1357,7 @@ function statement_Player_spend_today($from, $a_id, $conn) {
 
     $sql = " SELECT   SUM(n.n_amount) as play  FROM  users u LEFT JOIN numbers n ON   u.u_id=n.n_u_id   where u.u_type" . $a_type . "_by ='$a_id'  AND DATE(n.n_date) = DATE('$from')";
 
-   
+
 
     $result = mysqli_query($conn, $sql);
     $res = mysqli_fetch_assoc($result);
@@ -1385,3 +1393,17 @@ function getuser($u_id, $conn) {
     $res = mysqli_fetch_assoc($result);
     return $res['u_username'];
 }
+
+/* FUNCTIONS FOR VIDEO SESSION --------------------------------------------------------------------- s */
+
+function getCategory($conn, $cat_id = 0) {
+    if ($cat_id != 0) {
+        $query = "SELECT * FROM category WHERE status=1";
+        return mysqli_query($conn, $query);
+    } else {
+        $query = "SELECT * FROM category WHERE category_id=\"$cat_id\"";
+        return mysqli_fetch_assoc(mysqli_query($conn, $query));
+    }
+}
+
+/* ------------------------------------------------------------------------------------------------- e */

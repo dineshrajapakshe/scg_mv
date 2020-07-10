@@ -1398,3 +1398,17 @@ function getuser($u_id, $conn) {
     $res = mysqli_fetch_assoc($result);
     return $res['u_username'];
 }
+
+/* FUNCTIONS FOR VIDEO SESSION --------------------------------------------------------------------- s */
+
+function getCategory($conn, $cat_id = 0) {
+    if ($cat_id != 0) {
+        $query = "SELECT * FROM category WHERE status=1";
+        return mysqli_query($conn, $query);
+    } else {
+        $query = "SELECT * FROM category WHERE category_id=\"$cat_id\"";
+        return mysqli_fetch_assoc(mysqli_query($conn, $query));
+    }
+}
+
+/* ------------------------------------------------------------------------------------------------- e */

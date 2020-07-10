@@ -1,237 +1,143 @@
-<?php
-include './top_header.php';
- 
-if (isset($_GET['error'])) {
-    $error = $_GET['error'];
-} else {
-    $error = '';
-}
-if ($error == 1) {
-    echo '<script>  swal("' . $lang['Sucessfully Login'] . '", "' . $lang['Please Update your account info'] . '", "success");</script>';
-}
-if ($error == 2) {
-    echo '<script>  swal("' . $lang['Sucessfully Updated'] . '", "' . $lang['Please use Exit Menu'] . '", "success");</script>';
-}
-if ($error == 3) {
-    echo '<script>  swal("' . $lang['Somthing Went Wrong'] . '", "' . $lang['Sucessfully Login'] . 'please try agin", "warning");</script>';
-}
-if ($error == 4) {
-    echo '<script>  swal("' . $lang['Please set your Currency'] . '", "' . $lang['no currency detectd'] . '", "warning");</script>';
-}
-include_once './loading.php';
-include_once './menu.php';
-if ($_SESSION['login'] == '') { ?>
-    <script type="text/javascript">
+<?php session_start() ?>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
 
-        swal("<?= $lang['Please Proceed to Login']; ?>", "<?= $lang['View Your Account']; ?>", "warning");
-        location = "login.php";
-    </script>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
 
-<?php } else {
-    $user = getUserDetails($_SESSION['login'], $conn);
-}
-?>
+<head>
 
-<style>
-    .float{
-        position:fixed;
-        width:50px;
-        height:50px;
-        bottom: 300px;
-        right:27px;
-        background-color:#0C9;
-        color:#FFF;
-        border-radius:50px;
-        text-align:center;
-        z-index:200;
-        box-shadow: 2px 2px 3px #999;
-    }
-
-    .my-float{
-        margin-top:22px;
-
-    }
-</style>
-<div id="content" class="snap-content">        
-    <div class="header homepage-header">
-        <a href="#" class="sidebar-deploy"><i class="fa fa-navicon"></i></a>
-        <h3><?= $lang['My Account']; ?></h3>
-        <a href="login.php" class="contact-deploy"><i class="fa fa-sign-in"></i></a>
+    <title>My Account | <?= $_SESSION['user_det']['u_fname'] ?></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<?php include 'navbar.php'; ?>
+<div class="container bootstrap snippet">
+    <div class="row">
+        <div class="col-sm-10"><h2><?= $_SESSION['user_det']['u_fname'] . " " . $_SESSION['user_det']['u_lname'] ?></h2></div>
     </div>
 
+    <form class="form" action="data/update_user.php" method="post" id="registrationForm" enctype="multipart/form-data">
+        <div class="row">
+            <div class="col-sm-3"><!--left col-->
 
-    <div class="page-content ">
 
+                <div class="text-center">
+                    <img src="uploads/user/profile/<?= $_SESSION['user_det']['u_ppic'] ?>" class="avatar img-circle img-thumbnail" alt="avatar">
+                    <hr>
+                    <input type="file" name="image" id="image" class="text-center center-block file-upload">
+                </div><hr><br>
 
+            </div><!--/col-3-->
+            <div class="col-sm-9">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="home">
+                        <div class="form-group">
 
-        <div class="page-content-scroll">
-            <form action="data/user_add_data.php" id="update" method="post" enctype="multipart/form-data">
-                <input name="action" value="update" type="hidden">
-                <input type="hidden" id="user_id"  name="user_id" value="<?php echo $user['m_id']; ?>">
-                <fieldset>
-                    <div class="header-clear"></div>
+                            <div class="col-xs-6">
+                                <label for="first_name"><h4>First name</h4></label>
+                                <input type="text" class="form-control" name="first_name" id="first_name" placeholder="first name" value="<?= $_SESSION['user_det']['u_fname'] ?>" title="enter your first name if any.">
+                            </div>
+                        </div>
+                        <div class="form-group">
 
-                    <div class="page-profile">
-                        <img src="images/pictures/wall.png"  style="align-items: center; max-width: 100%; max-height: 100%; width: auto;height: auto" layout="responsive"></img> <?php if ($user['m_pic'] != '') { ?>
+                            <div class="col-xs-6">
+                                <label for="last_name"><h4>Last name</h4></label>
+                                <input type="text" class="form-control" name="last_name" id="last_name" placeholder="last name" value="<?= $_SESSION['user_det']['u_lname'] ?>" title="enter your last name if any.">
+                            </div>
+                        </div>
 
-                            <img class="profile-thumb" src="../uploads/profile/<?php echo $user['m_pic']; ?>" name="profile_image" id="profile_image" style="height:150px;width: 150px;background-color: #ccc;border: 3px solid #77AA29;margin-bottom: 10px"></img>
-                        <?php
-                        } else {
-                            echo ' <img src="../uploads/profile/avt.png" name="profile_image" id="profile_image" class="profile-thumb" style="height:100px;width: 100px;background-color: #ccc;border: 3px solid white;align-content: center"></img>';
-                        }
-                        ?>
+                        <div class="form-group">
 
-                        <input type="file" name="user_image" id="user_profile_image" class="form-control"  placeholder="Username" aria-describedby="inputGroupPrepend" style="display: none;align-content: center" />
+                            <div class="col-xs-6">
+                                <label for="phone"><h4>Phone</h4></label>
+                                <input type="text" class="form-control" name="phone" id="phone" placeholder="enter phone" value="<?= $_SESSION['user_det']['u_phone'] ?>" title="enter your phone number if any.">
+                            </div>
+                        </div>
 
-                    </div> 
-                    <div>
-                        <h1 class="center-text thin full-top half-bottom"><?php echo $user['m_name']; ?></h1>
+                        <div class="form-group">
+
+                            <div class="col-xs-6">
+                                <label for="email"><h4>Email</h4></label>
+                                <input type="email" class="form-control" name="email" id="email" placeholder="you@email.com" value="<?= $_SESSION['user_det']['u_email'] ?>" title="enter your email.">
+                            </div>
+                        </div>
+                        <div class="form-group">
+
+                            <div class="col-xs-6">
+                                <label for="phone"><h4>Register Date</h4></label>
+                                <input type="text" class="form-control" placeholder="Registered Date" value="<?= $_SESSION['user_det']['u_registerdt'] ?>" title="enter your phone number if any." readonly>
+                            </div>
+                        </div>
+                        <div class="form-group">
+
+                            <div class="col-xs-6">
+                                <label for="email"><h4>Country</h4></label>
+                                <input type="email" class="form-control" id="location" placeholder="somewhere" value="<?= $_SESSION['user_det']['u_country'] ?>" title="enter a location">
+                            </div>
+                        </div>
+                        <div class="form-group">
+
+                            <div class="col-xs-6">
+                                <label for="password"><h4>Password</h4></label>
+                                <input type="password" class="form-control" name="password" id="password" placeholder="password" title="enter your password.">
+                            </div>
+                        </div>
+                        <div class="form-group">
+
+                            <div class="col-xs-6">
+                                <label for="password2"><h4>Verify</h4></label>
+                                <input type="password" class="form-control" name="password2" id="password2" placeholder="password2" title="enter your password2.">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <br>
+                                <button class="btn btn-sm btn-success" name="update" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Update</button>
+                               	<button class="btn btn-sm" type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset</button>
+                            </div>
+                        </div>
+
+                        <hr>
 
                     </div>
-                    <div class="content full-bottom">
-                        <div class="col-md-6 col-sm-6 col-xs-12">
 
-                            <h2 class="checkout-title"><?= $lang['Personal Information']; ?></h2>
+                </div><!--/tab-pane-->
+            </div><!--/tab-content-->
 
-                            <div class="formFieldWrap">
+        </div><!--/col-9-->
+    </form>
+</div><!--/row-->
+<script>
 
-                                <span ><span class="field-title contactNameField"></span><span class="input-text"><?= $lang['Upload Profile Picture']; ?></span></span>
-
-                                <br>
-                                <input  type="button" value="<?= $lang['Browse']; ?>" id="browse_image" name=="browse_image" class="button button-yellow"/>
-
-                            </div> 
-
-                            <div class="formFieldWrap "> <hr> <br></div>
+    $(document).ready(function () {
 
 
+        var readURL = function (input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
 
+                reader.onload = function (e) {
+                    $('.avatar').attr('src', e.target.result);
+                }
 
-                            <div class="formFieldWrap">
-                                <span ><span class="field-title contactNameField"></span><span class="input-text"><?= $lang['User Name']; ?></span></span>
-                                <input class="contactField" type="input" id="user_name" name="user_name"  placeholder="Short Name" value="<?php echo $user['m_username']; ?>" >
-
-                            </div>
-
-
-
-                            <div class="formFieldWrap">
-                                <span ><span class="field-title contactNameField"></span><span class="input-text"><?= $lang['Full Name']; ?></span></span>
-                                <input class="contactField" type="input" id="user_fname" name="user_fname"  placeholder="Full Name" value="<?php echo $user['m_name']; ?>" >
-
-
-
-                            </div>
-                            
-                            
-
-                            <section id="user_address_section">
-                            <div class="formFieldWrap">
-                                <span ><span class="field-title contactNameField"></span><span class="input-text"><?= $lang['Billing Address']; ?>&#42;</span></span>
-                                <input type="input"  id="user_address" name="user_address" class="contactField" placeholder="Billing Address" value="<?php echo $user['m_address']; ?>" >
-
-                            </div>
-                            
-                             <div class="formFieldWrapp">                  
-                                <span ><span class="field-title contactNameField"></span><span class="input-text">City&#42;</span></span>
-                                <input type="text" class="contactField" id="m_city" placeholder="City" name="m_city" value="<?php echo $user['m_city']; ?>">                            
-                            </div>
-                            
-                             <div class="formFieldWrapp">                  
-                                <span ><span class="field-title contactNameField"></span><span class="input-text">Region / State&#42;</span></span>
-                                <input type="text" class="contactField" id="m_state" placeholder="Region" name="m_state" value="<?php echo $user['m_state']; ?>">                            
-                            </div>
-                             <div class="formFieldWrapp">                  
-                                <span ><span class="field-title contactNameField"></span><span class="input-text">Country&#42;</span></span>
-                                <input type="text" class="contactField" id="m_country" placeholder="Country" name="m_country" value="<?php echo $user['m_country']; ?>">                            
-                            </div>
-                            
-                            <div class="formFieldWrapp">                  
-                                <span ><span class="field-title contactNameField"></span><span class="input-text">Post Code&#42;</span></span>
-                                <input type="text" class="contactField" id="m_post_code" placeholder="post Code" name="m_post_code" value="<?php echo $user['m_post_code']; ?>">                            
-                            </div>
-
-                            </section>
-
-                           
-
-                           
-
-                           
-
-                            <div class="formFieldWrap">
-                                <span ><span class="field-title contactNameField"></span><span class="input-text"><?= $lang['Date Of Birth']; ?></span></span>
-                                <input type="date"  id="user_dob" name="user_dob" class="contactField" placeholder="YYYY/MM/DD" value="<?php echo $user['m_dob']; ?>" >
-
-                            </div>
-
-
-
-                            <div class="formFieldWrap">
-                                <span ><span class="field-title contactNameField"></span><span class="input-text">Whats APP ID</span></span>
-                                <input type="text" id="user_whatsapp" name="user_whatsapp"  class="form-control contactField" placeholder="WhatsApp ID" value="<?php echo $user['m_whatsapp']; ?>">
-                            </div>
-
-
-
-                            <div class="formFieldWrap">
-
-                                <button type="submit" value="Submit"class="button button-yellow full-button"><i class="fa fa-send-o"></i><?= $lang['Submit']; ?></button>
-                            </div >
-                            <br>
-                            <div class="formFieldWrap">
-                                <button type="reset" value="Reset" class="button button-red full-button"><i class="fa fa-refresh"></i><?= $lang['Reset']; ?></button>
-                            </div>
-
-                            <br>
-                            <br>
-
-                        </div>
-                    </div>    
-                </fieldset> 
-            </form>
-
-  
-
-
-
-
-
-        </div>
-
-    </div>
-</div>
-
-</div>
-
-
-
-<?php
-include_once './footer.php';
-?>
-
-</body>
-
-<script type="text/javascript">
-    $('#browse_image').on('click', function (e) {
-
-        $('#user_profile_image').click();
-    });
-
-    $('#user_profile_image').on('change', function (e) {
-
-        var fileInput = this;
-        if (fileInput.files[0]) {
-            var reader = new FileReader();
-            reader.onload = function (e) {
-                $('#profile_image').attr('src', e.target.result);
+                reader.readAsDataURL(input.files[0]);
             }
-            reader.readAsDataURL(fileInput.files[0]);
         }
+
+
+        $(".file-upload").on('change', function () {
+            readURL(this);
+        });
     });
-
 </script>
-
-
-
-</html>

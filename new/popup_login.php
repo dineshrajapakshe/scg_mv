@@ -1,4 +1,4 @@
-<div class="modal fade flat-popupform" id="popup_login">
+<div class="modal fade flat-popupform" id="popup_login" style="z-index: 9999">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body text-center clearfix">
