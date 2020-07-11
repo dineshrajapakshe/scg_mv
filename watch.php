@@ -4,6 +4,16 @@ include_once 'conn.php';
 //include_once './header.php';
 include_once './data/data_watch.php';
 include_once 'inc/functions.php';
+
+if (isset($_GET['v_id'])) {
+    $v_id = $_GET['v_id'];
+} else {
+    $v_id = 0;
+}
+
+$sql = "select * from videos where v_id='" . $v_id . "'";
+$result = mysqli_query($conn, $sql);
+$row = mysqli_fetch_assoc($result);
 ?>
 <head>
     <link href="admin/js/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
@@ -25,9 +35,8 @@ include_once 'inc/functions.php';
         <div class="col-md-12">
             <div class="row">
                 <div class="col-md-8">
-
                     <video controls style="width:100%;" autoplay="true">
-                        <source src="<?php echo $row['v_video']; ?>" type="video/mp4">
+                        <source src="<?php echo $row['v_video']; ?>">
                     </video>
                     <hr>
                     <div class="row">
@@ -88,6 +97,7 @@ include_once 'inc/functions.php';
                                 </div>
                             </div>
                         </a>
+                        <br>
                     <?php } ?>
                 </div>
             </div>

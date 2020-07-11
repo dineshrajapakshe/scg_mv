@@ -162,9 +162,9 @@
 
 <div id="popup_login" class="modal ">
 
-    <form class="modal-content animate" action="data/data_login.php" method="post"style="background-color:#fff">
+    <form class="modal-content animate" action="data/data_login.php" method="post">
 
-        <div class="container" style="background-color:#fff">
+        <div class="container">
             <input type="text" placeholder="Enter Username" name="u_username" required>
 
             <input type="password" placeholder="Enter Password" name="u_password" required>
@@ -186,7 +186,7 @@
 
 <div id="popup_signUp" class="modal ">
 
-    <form class="modal-content animate" action="data/data_signup.php" method="post"style="background-color:#fff">
+    <form class="modal-content animate" action="data/data_signup.php" method="post">
         <input type="hidden" name="action" value="register">
         <input type="hidden" name="type" value="front">
         <div class="container">
