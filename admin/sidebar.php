@@ -92,7 +92,25 @@
                             <span class="badge badge-info right"></span>
                         </p>
                     </a>
-                </li>]
+                </li>
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-cog"></i>
+                        <p>
+                            SETTINGS
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="category.php" class="nav-link" style="font-size: 13px;">
+                                <i class="far fa-user nav-icon"></i>
+                                <p> Category List</p>
+                            </a>
+                        </li>
+                        <br>
+                    </ul>
+                </li>
                 <li class="nav-item">
                     <a  href="javascript:logout()"  class="nav-link">
                         <i class="nav-icon  fas  fa-sign-out-alt"></i>

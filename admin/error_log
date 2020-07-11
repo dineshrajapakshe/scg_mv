@@ -54,3 +54,7 @@ Stack trace:
 #1 /home/jhasia45/public_html/scg_mv/admin/index.php(23): include_once('/home/jhasia45/...')
 #2 {main}
   thrown in /home/jhasia45/public_html/scg_mv/admin/infobox.php on line 9
+[10-Jul-2020 14:34:45 UTC] PHP Notice:  Undefined index: file1 in /home2/etronics/public_html/scg_mv/admin/file_upload_parser.php on line 4
+[10-Jul-2020 14:34:45 UTC] PHP Notice:  Undefined index: file1 in /home2/etronics/public_html/scg_mv/admin/file_upload_parser.php on line 9
+[10-Jul-2020 15:00:32 UTC] PHP Notice:  Undefined index: file1 in /home2/etronics/public_html/scg_mv/admin/file_upload_parser.php on line 4
+[10-Jul-2020 15:00:32 UTC] PHP Notice:  Undefined index: file1 in /home2/etronics/public_html/scg_mv/admin/file_upload_parser.php on line 9
